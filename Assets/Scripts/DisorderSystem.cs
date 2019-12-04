@@ -11,6 +11,7 @@ public class DisorderSystem : MonoBehaviour {
 
     private List<Behaviour> activeVisualDisorders;
     private List<Behaviour> activeAudioDisorders;
+    private List<Behaviour> activeCognitiveDisorders;
 
     [SerializeField]
     private GameObject tinnitusSource;
@@ -26,6 +27,7 @@ public class DisorderSystem : MonoBehaviour {
 
         activeVisualDisorders = new List<Behaviour>();
         activeAudioDisorders = new List<Behaviour>();
+        activeCognitiveDisorders = new List<Behaviour>();
 
     }
 
@@ -135,7 +137,7 @@ public class DisorderSystem : MonoBehaviour {
     // }
 
 
-    /*
+    
     public void PanicAttack()
     {
 
@@ -155,7 +157,7 @@ public class DisorderSystem : MonoBehaviour {
 
     }
 
-    
+    /*
 
     public void ReturnVisual()
     {
@@ -191,6 +193,12 @@ public class DisorderSystem : MonoBehaviour {
         {
             activeAudioDisorders[0].enabled = false;
             activeAudioDisorders.RemoveAt(0);
+
+        }
+        while (activeCognitiveDisorders.Count > 0)
+        {
+            activeCognitiveDisorders[0].enabled = false;
+            activeCognitiveDisorders.RemoveAt(0);
 
         }
     }
